@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "70c1ee8b-0aef-40fa-b657-60895b4778a7",
+		"name": "Examen3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25124039"
+	},
+	"item": [
+		{
+			"name": "Products Account",
+			"item": [
+				{
+					"name": "listarAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/interestrates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"interestrates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear Tasa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"name\": \"Nombre del Producto\",\r\n  \"interestRate\": 0.05,\r\n  \"state\": \"ACT\",\r\n  \"start\": \"2023-08-25\",\r\n  \"end\": \"2023-09-26\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/interestrates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"interestrates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear Producto Cuenta",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"producto123\",\r\n  \"name\": \"Nombre del Producto Test\",\r\n  \"description\": \"Descripción del producto\",\r\n  \"minimunBalance\": 1000.00,\r\n  \"payInterest\": \"Y\",\r\n  \"acceptsChecks\": \"Y\",\r\n  \"state\": \"ACT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productsaccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productsaccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener producto por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productsaccounts/producto123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productsaccounts",
+								"producto123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Branches",
+			"item": [
+				{
+					"name": "createBranch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"aaa--ss--ccss--xx\",\r\n  \"code\": \"12345\",\r\n  \"name\": \"Branch 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/v1/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/v1/branches/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"v1",
+								"branches",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

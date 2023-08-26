@@ -24,7 +24,7 @@ public class BranchService {
     public Branch lookById(String id) throws CRUDException {
         log.info("Looking branch with id: {}", id);
         Optional<Branch> branchOpt = this.branchRepository.findById(id);
-        if (!branchOpt.isPresent()) {
+        if (branchOpt.isEmpty()) {
             throw new CRUDException(404, "Branch with id: {"+id+"} does not exist");
         }
         return branchOpt.get();
